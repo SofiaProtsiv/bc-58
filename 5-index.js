@@ -17,7 +17,7 @@
 
 //? Логічні оператори
 // console.log(true && 3);
-// console.log(false && 3);
+// console.log(null && 3);
 // console.log(true && 4 && "kiwi");
 // console.log(true && 0 && "kiwi");
 // console.log(true || 3);
@@ -41,3 +41,5 @@
 // console.log("  -9  " + 5);
 // console.log(null + 1);
 // console.log(undefined + 1);
+// console.log(+"6" + 3)
+// console.log(1 + +"1")

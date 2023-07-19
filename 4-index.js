@@ -3,16 +3,17 @@
  */
 
 /*
- * Результатом порівняння буде булливе значення.
+ * Результатом порівняння буде бульове значення.
  * Рядки порівнюються по unicode https://www.asciitable.com/asciifull.gif
  * При порівнянні рядків, рядки порівнюються посимвольно.
  * При порівнянні різних типів, операнди наводяться до числа.
  * null не дорівнює нічому крім себе та undefined.
  * undefined не дорівнює нічому крім себе та null.
  */
+
 // console.log("a" < "A");
-// console.log("n", "n".charCodeAt(0));
-// console.log("l", "l".charCodeAt(0));
+// console.log("b", "b".charCodeAt(0));
+// console.log("a", "a".charCodeAt(0));
 // console.log("a" + "A" > "b" + "B");
 // console.log("c".charCodeAt(0));
 // console.log("apple" > "aPPLE");
@@ -20,6 +21,7 @@
 /*
  * Приведення різних типів до числа:
  * true --> 1
+ * "sofia" --> 1
  * false --> 0
  * '' --> 0
  * null --> 0
@@ -46,6 +48,7 @@
 
 //* Оператор менше або дорівнює (<=)
 // console.log(6 <= 6);
+// console.log(6 < 5);
 // console.log(5 <= 5);
 // console.log(5 <= 4);
 
@@ -55,13 +58,13 @@
 // console.log(3 >= 4);
 
 //* Не суворе рівенство (==)
-// console.log(null > 0); //false
-// console.log(null == 0); //false
-// console.log(null >= 0); //true
+// console.log(null == 0); 
+// console.log(null >= 0); 
 
 // console.log(undefined === null);
 
 // console.log("123" === 123);
+// console.log(Boolean(" "))
 // console.log(true == " ");
 // console.log(4 === 5 - true);
 
@@ -77,5 +80,5 @@
 //* Суворе не дорівнює (!==)
 // console.log("4" !== 4);
 
-// console.log(!!true);
+// console.log(!true);
 
