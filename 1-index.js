@@ -1,18 +1,26 @@
 "use strict";
+
 /*
  * Розгалуження if
  */
 
-// if (умова) {
-// тіло if
+// if (6 < 5) {
+//     console.log("6<5");
+// }
+// else if (5 >= 5) {
+//     console.log("5>=5");
+// } else if (5 < 3) {
+//     console.log("5<3");
+// } else {
+//     console.log("don't known");
 // }
 
-// const num = 18;
+// if(6 > 5){
+// console.log("6>5");
+// }
 
-// if (num >= 18) {
-//   console.log("Hello!");
-// } else {
-//   console.log(" Good bye!");
+// if(5 < 3){
+// console.log("5<3");
 // }
 
 /*
@@ -20,18 +28,12 @@
 ? Перевірте, що першим символом цього рядка є буква 'a'.
 ? Якщо це так - виведіть 'так', інакше виведіть 'ні'.
 */
-
 // const str = "abcde";
-// console.log(str.startsWith("a"));
 // if (str.startsWith("a")) {
-//   console.log("Так");
+//   console.log("yes");
 // } else {
-//   console.log("Ні");
+//   console.log("no");
 // }
-
-// const messege = str.startsWith("a") ? "Yes" : "No";
-
-// console.log(messege);
 
 /*
 ? У змінній min лежить число від 0 до 59.
@@ -41,19 +43,18 @@
 ? [30 до 45) – третя чверть години
 ? [45 до 60) – четверта чверть години
 */
+// const minutes = 15;
 
-// const min = 61;
-
-// if (min >= 0 && min < 15) {
+// if (minutes >= 0 && minutes < 15) {
 //   console.log("перша чверть години");
-// } else if (min >= 15 && min < 30) {
+// } else if (minutes >= 15 && minutes < 30) {
 //   console.log("друга чверть години");
-// } else if (min >= 30 && min < 45) {
+// } else if (minutes >= 30 && minutes < 45) {
 //   console.log("третя чверть години");
-// } else if (min >= 45 && min < 60) {
+// } else if (minutes >= 45 && minutes <= 59) {
 //   console.log("четверта чверть години");
 // } else {
-//   console.log("Ви не потрапили в діапозон години!");
+//   console.log("No matches");
 // }
 
 /*
@@ -62,64 +63,45 @@
 ? Якщо користувач вводить ECMAScript,
 ? то показати: «Вірно!», інакше – відобразити: «Не знаєте? ECMAScript!
 */
+// const answer = prompt("Яка «офіційна» назва JavaScript?").trim().toLowerCase();
+// const result = "ECMAScript".toLowerCase();
 
-// const userInput = prompt("Яка «офіційна» назва JavaScript?");
+// 0, "", false, NaN, null, undefined ====> FALSE
 
-// const ofName = "ECMAScript".toLowerCase();
-
-// // const userInputModify = userInput.toLowerCase().trim();
-
-// const userInputToLowerCase = userInput.toLowerCase();
-// const userInputToLowerCaseWithoutSpase = userInputToLowerCase.trim()
-
-// if (userInputToLowerCaseWithoutSpase === ofName) {
+// if (!answer) {
+//   // answer === ""
+//   console.log("empty!!! enter smth");
+// } else if (answer === result) {
 //   console.log("Вірно!");
 // } else {
 //   console.log("Не знаєте? ECMAScript!");
 // }
 
 /*
-? Напишіть код, який отримує число через prompt, а потім виводить у console.log:
-? 1, якщо значення більше нуля,
-? -1, якщо значення менше нуля,
-? 0, якщо значення дорівнює нулю.
-? Передбачається, що користувач вводить лише цифри.
+? Є деякі рядки, які потрібно перевірити на вміст заборонених слів spam і sale, і повернути результат перевірки. 
+? Слова в рядку можуть бути у довільному регістрі, наприклад SPAM або sAlE. 
+? Якщо знайшли заборонене слово (spam або sale) то повертайте true. 
+? Якщо в рядку відсутні заборонені слова, повертайте false.
 */
 
-// const number = Number(prompt("Введіть число"));
+// const str = "Get best sale offers now!";
+// const normalizedStr = str.toLowerCase();
 
-// if (number > 0) {
-//   console.log(1);
-// } else if (number < 0) {
-//   console.log(-1);
-// } else {
-//   console.log(0);
+// const result = normalizedStr.includes("spam") || normalizedStr.includes("sale");
+
+// console.log(result)
+// if(normalizedStr.includes("spam") || normalizedStr.includes("sale")){
+//     console.log(true)
+// }else{
+//     console.log(false)
 // }
 
-/*
-? Перевірте за допомогою об'єкта navigator та властивості userAgent
-? який браузер у користувача, результат вивести в консоль
-*/
-
-// const userBrowser = navigator.userAgent;
-// console.log(userBrowser);
-// console.log(userBrowser.includes("Chrome"));
-// console.log(userBrowser.includes("Safari"));
-// // if (userBrowser.includes("IE")) {
-// //   console.log("Браузер Chrome");
-// // } else if (userBrowser.includes("Safari")) {
-// //   console.log("Браузер Safari");
-// // }
-
-// let message = "Вашого браузера в нашому скиску немає";
-
-// if (userBrowser.includes("IE")) {
-//   message = "Браузер IE";
-// } else if (userBrowser.includes("Opera")) {
-//   message = "Браузер Opera";
-// }
-
-// console.log(message);
+// "Latest technology news" false
+// "JavaScript weekly newsletter" false
+// "Get best sale offers now!" true
+// "Amazing SalE, only tonight!" true
+// "Trust me, this is not a spam message" true
+// "Get rid of sPaM emails. Our book in on sale!" true
 
 /*
  * Switch case
@@ -139,116 +121,77 @@
 // }
 
 /*
-? Перепишіть код за допомогою однієї конструкції switch:
+? Напиши скрипт,який виконує арифметичні дії над двома числами. Попроси користувача ввести символ операції (`+`, `-`, `/`, `*`)
 */
+// const num1 = Number.parseFloat(prompt("Введіть перше число"));
+// const num2 = Number.parseFloat(prompt("Введіть друге число"));
+// const operation = prompt("Яку операцію над числами бажаєте виконати?");
 
-// const number = 4;
-
-// let message = "";
-
-// switch (number) {
-//   case 1:
-//     message = "Змінна number має значення 1";
-//     break;
-//   case 2:
-//     message = "Змінна number має значення 2";
-//     break;
-
-//   case 3:
-//     message = "Змінна number має значення 3";
-//     break;
-
-//   default:
-//     message = "Змінна number має більше значення ніж 3";
-//     break;
+// switch (operation) {
+//     case "+":
+//         console.log(num1 + num2);
+//         break;
+//     case "-":
+//         console.log(num1 - num2);
+//         break;
+//     case "*":
+//         console.log(num1 * num2);
+//         break;
+//     case "/":
+//         console.log(num1 / num2);
+//         break;
+//     default:
+//         console.log("smth went wrong");
 // }
 
-// const number = 2;
+/*
+? Напиши скрипт який виводитиме в консоль браузера рядок залежно від значення змінної monthNumber.
+? Якщо значення змінної monthNumber:
 
-// switch (number) {
-//   case 1:
-//     console.log("Змінна number має значення 1");
-//     break;
-//   case 2:
-//     console.log("Змінна number має значення 2");
-//     break;
-//   case 3:
-//     console.log("Змінна number має значення 3");
-//     break;
-//   default:
-//     console.log("Змінна number має більше значення ніж 3");
-// }
+? 12, 1, 2, виводь рядок "Це зима"
+? 3, 4, 5, виводь рядок "Це весна"
+? 6, 7, 8, виводь рядок "Це літо"
+? 9, 10, 11, виводь рядок "Це осінь"
+*/
+// const monthNumber = Math.floor(Math.random() * (12 - 1) + 1);
+// console.log(monthNumber)
 
-// if (number > 0) {
-//   console.log(1);
-// } else if (number < 0) {
-//   console.log(-1);
-// } else {
-//   console.log(0);
-// }
-// const min = 10;
-
-// const inTime = true;
-// console.log(inTime === min >= 0 && min < 15);
-// switch (inTime) {
-//   case min >= 0 && min < 15:
-//     console.log("перша чверть години");
-//     break;
-//   case min >= 15 && min < 30:
-//     console.log("друга чверть години");
-//     break;
-//   case min >= 30 && min < 45:
-//     console.log("третя чверть години");
-//     break;
-//   case min >= 45 && min < 60:
-//     console.log("черверта чверть години");
-//     break;
-
-//   default:
-//     console.log("Ви не потрапили в діапозон години!");
-//     break;
-// }
-
-// const number = Number(prompt("Введіть число між 0 та 3", ""));
-
-// switch (number) {
-//   case 0:
-//     console.log("Ви ввели число 0");
-//     break;
-
-//   case 1:
-//     console.log("Ви ввели число 1");
-//     break;
-
-//   case 2:
-//     console.log("Ви ввели число 2");
-//     break;
-
-//   case 3:
-//     console.log("Ви ввели число 3");
-//     break;
-
-//   default:
-//     console.log("Ви ввели якесь інше число");
-// }
-
-// if (number === 0) {
-//   console.log("Ви ввели число 0");
-// } else if (number === 1) {
-//   console.log("Ви ввели число 1");
-// } else if (number === 2) {
-//   console.log("Ви ввели число 2");
-// } else if (number === 3) {
-//   console.log("Ви ввели число  3");
-// } else {
-//   console.log("Ви ввели якесь інше число");
+// switch (monthNumber) {
+//     case 12:
+//     case 1:
+//     case 2:
+//         console.log("Це зима")
+//         break;
+//     case 3:
+//     case 4:
+//     case 5:
+//         console.log("Це весна")
+//         break;
+//     case 6:
+//     case 7:
+//     case 8:
+//         console.log("Це літо")
+//         break;
+//     case 9:
+//     case 10:
+//     case 11:
+//         console.log("Це осінь")
+//         break;
+//     default:
+//         break;
 // }
 
 /*
  * Тернарний оператор
  */
 
-//<умова>? <вираз_якщо_умова_істинна> : <вираз_якщо_умова_хибна>
+// if (6 < 5) {
+
+// } else {
+//
+// }
+
+//<умова> ? <вираз_якщо_умова_істинна> : <вираз_якщо_умова_хибна>
 
 /*
 ? Перепишіть конструкцію if з використанням умовного оператора '?':
@@ -257,14 +200,13 @@
 // const b = 3;
 // let message = "";
 
-// const message = a + b < 4 ? "Мало" : "Багато";
-
 // if (a + b < 4) {
 //   message = "Мало";
 // } else {
 //   message = "Багато";
 // }
 
+// let message = a + b < 4 ? "Мало" : "Багато";
 // console.log(message);
 
 /*
@@ -272,18 +214,6 @@
 */
 
 // const login = 'Директор';
-// let message =
-//   login === "Співробітник"
-//     ? "Привіт"
-//     : login === "Директор"
-//     ? "Здравствуйте"
-//     : login === null
-//     ? "Немає логіна"
-//     : "Ми вас не знаєм";
-
-let message = login === "Співробітник" ? "Привіт" : "Ви не співробітник";
-console.log(message);
-const login = prompt("Введіть логін!");
 
 // let message = "Ми вас не знаєм!!!";
 
@@ -294,5 +224,17 @@ const login = prompt("Введіть логін!");
 // } else if (login === null) {
 //   message = "Немає логіна";
 // }
+
+// console.log(message)
+
+// const login = "Директор";
+// let message =
+//   login === "Співробітник"
+//     ? "Привіт"
+//     : login === "Директор"
+//     ? "Здравствуйте"
+//     : login === null
+//     ? "Немає логіна"
+//     : "Ми вас не знаєм!!!";
 
 // console.log(message);
